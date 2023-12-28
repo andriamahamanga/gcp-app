@@ -2,7 +2,7 @@
 # Customize these values as needed.
 substitutions:
   _PROJECT_ID: 'vibrant-petal-406618'  # Replace with your actual project ID.
-  _IMAGE_NAME: 'us-docker.pkg.dev/vibrant-petal-406618/testa-artf/MINE'
+  _IMAGE_NAME: 'us-docker.pkg.dev/vibrant-petal-406618/testa-artf/itito'
   _TAG_NAME: '0.0.1'
   _REGION: 'us-central1'  # Replace with your preferred region.
   _SERVICE_NAME: 'my-cloud-run-service'  # Replace with your preferred Cloud Run service name.
