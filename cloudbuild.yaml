@@ -8,12 +8,12 @@ substitutions:
   _SERVICE_NAME: 'my-cloud-run-service-2'  # Replace with your preferred Cloud Run service name.
 
 steps:
-- name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', '${_IMAGE_NAME}:${_TAG_NAME}', '.']
+#- name: 'gcr.io/cloud-builders/docker'
+#  args: ['build', '-t', '${_IMAGE_NAME}:${_TAG_NAME}', '.']
 
 # Push the Docker image to Google Container Registry.
-- name: 'gcr.io/cloud-builders/docker'
-  args: ['push', '${_IMAGE_NAME}:${_TAG_NAME}']
+#- name: 'gcr.io/cloud-builders/docker'
+#  args: ['push', '${_IMAGE_NAME}:${_TAG_NAME}']
 # Deploy to Cloud Run.
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: 'gcloud'
@@ -21,7 +21,7 @@ steps:
   - 'run'
   - 'deploy'
   - '${_SERVICE_NAME}'
-  - '--image=${_IMAGE_NAME}:${_TAG_NAME}'
+  - '--image=httpd'
   - '--platform=managed'
   - '--region=${_REGION}'
   - '--allow-unauthenticated'  # Optional: Remove this line if you don't want to allow unauthenticated access.
